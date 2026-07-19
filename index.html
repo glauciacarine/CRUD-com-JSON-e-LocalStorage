@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRUD de Livros com LocalStorage</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>CRUD de Livros</h1>
+      <p>Aplicação prática usando JavaScript, JSON, Array e LocalStorage.</p>
+    </header>
+
+    <section class="card formulario">
+      <h2>Cadastrar / Atualizar Livro</h2>
+
+      <input type="hidden" id="livroId" />
+
+      <label for="titulo">Título:</label>
+      <input type="text" id="titulo" placeholder="Digite o título do livro" />
+
+      <label for="autor">Autor:</label>
+      <input type="text" id="autor" placeholder="Digite o autor do livro" />
+
+      <label for="ano">Ano:</label>
+      <input type="number" id="ano" placeholder="Digite o ano de publicação" />
+
+      <label for="genero">Gênero:</label>
+      <input type="text" id="genero" placeholder="Digite o gênero do livro" />
+
+      <div class="botoes-formulario">
+        <button type="button" onclick="salvarLivro()">Salvar</button>
+        <button type="button" onclick="limparFormulario()" class="secundario">Limpar</button>
+      </div>
+    </section>
+
+    <section class="card lista">
+      <h2>Livros cadastrados</h2>
+
+      <div class="tabela-responsiva">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Título</th>
+              <th>Autor</th>
+              <th>Ano</th>
+              <th>Gênero</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="tabelaLivros"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card json">
+      <h2>Dados salvos em JSON</h2>
+      <p>Esta área permite visualizar os dados salvos no navegador pelo LocalStorage.</p>
+      <pre id="dadosJson"></pre>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
